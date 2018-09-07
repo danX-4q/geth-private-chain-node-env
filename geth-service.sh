@@ -2,7 +2,7 @@
 
 . geth-env.conf
 
-geth $GETH_PARA__datadir $GETH_PARA__ethash_dagdir --nodiscover --mine --miner.threads 4 --rpcaddr 0.0.0.0 2>> $GETH_ENV__logfile &
+geth $GETH_PARA__datadir $GETH_PARA__ethash_dagdir --nodiscover --mine --miner.threads 0 --rpc --rpcaddr 0.0.0.0 --rpcport 8545 --rpcapi "db,eth,net,web3" >> $GETH_ENV__logfile &
 
 echo ""
 echo ""
