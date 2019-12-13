@@ -6,10 +6,10 @@ const fs = require("fs")
 const Web3 = require('web3');
 const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));
 
-accountA = "0x69c26fce9391860febc5fcfef28ea8c0c14072e1"
-accountB = "0xb05deacc0a841d20f62af734e14d24d6b175b426"
-accountC = "0x5f52694474a45838c84824f11b27a15942ad34fd"
-contractAddr = '0x562659e2624C183ea02DA147Ffc0dd9fd466545f'
+const accountA = "0x69c26fce9391860febc5fcfef28ea8c0c14072e1"
+const accountB = "0xb05deacc0a841d20f62af734e14d24d6b175b426"
+const accountC = "0x5f52694474a45838c84824f11b27a15942ad34fd"
+const contractAddr = '0x562659e2624C183ea02DA147Ffc0dd9fd466545f' //get it from deploy-by-web3.js
 
 const deployer = accountA
 const cjsFileName = 'build/contracts/TutorialToken.json'
@@ -114,7 +114,9 @@ function burnFrom(address account, uint256 amount)
 
 async function erc20_mint(account, amount) {
   let gasPrice = await web3.eth.getGasPrice()
-  let gas = await myContract.methods.mint(account, amount).estimateGas()
+  let gas = await myContract.methods.mint(account, amount).estimateGas({
+    from: account
+  })
   console.log("[guess] gasPrice:", gasPrice)
   console.log("[guess] gas:", gas)
 
@@ -148,7 +150,9 @@ async function erc20_mint(account, amount) {
 
 async function erc20_transfer(from, to, value) {
   let gasPrice = await web3.eth.getGasPrice()
-  let gas = await myContract.methods.transfer(to, value).estimateGas()
+  let gas = await myContract.methods.transfer(to, value).estimateGas({
+    from: from
+  })
   console.log("[guess] gasPrice:", gasPrice)
   console.log("[guess] gas:", gas)
 
@@ -182,7 +186,9 @@ async function erc20_transfer(from, to, value) {
 
 async function erc20_burn(account, amount) {
   let gasPrice = await web3.eth.getGasPrice()
-  let gas = await myContract.methods.burn(amount).estimateGas()
+  let gas = await myContract.methods.burn(amount).estimateGas({
+    from: account
+  })
   console.log("[guess] gasPrice:", gasPrice)
   console.log("[guess] gas:", gas)
 
@@ -347,28 +353,28 @@ async function erc20Detail() {
 
 async function testcase_1() {
   await erc20Detail()
-  await sleep(1.5 * 1000)
-  await erc20_transfer(accountA, accountB, 1111)
+  await sleep(500)
+  await erc20_transfer(accountA, accountB, 545300)
   await sleep(1.5 * 1000)
   await erc20_balanceOf(accountA)
   await erc20_balanceOf(accountB)
 }
 
 async function testcase_2() {
-  await erc20_burn(accountA, 5)
+  await erc20_burn(accountA, 100)
   await sleep(1.5 * 1000)
-  await erc20_burn(accountB, 5)
+  await erc20_burn(accountB, 100)
   await sleep(1.5 * 1000)
   await erc20_balanceOf(accountA)
   await erc20_balanceOf(accountB)
-  await sleep(1.5 * 1000)
   await erc20Detail()
 }
 
 async function testcase_3() {
-  await erc20_approve(accountA, accountB, 5)
+  await erc20_approve(accountA, accountB, 50)
   await sleep(1.5 * 1000)
   await erc20_allowance(accountA, accountB)
+  await erc20_balanceOf(accountA)
 }
 
 async function testcase_4() {
@@ -380,46 +386,48 @@ A账户按照以下形式调用approve函数approve(B,100)。
 当B账户想用这100个ETH中的10个ETH给C账户时，则调用transferFrom(A, C, 10)。
 这时调用allowance(A, B)可以查看B账户还能够调用A账户多少个token。
    */
-  await erc20_transferFrom(accountB, accountA, accountC, 3)
+  await erc20_transferFrom(accountB, accountA, accountC, 30)
   await sleep(1.5 * 1000)
   await erc20_allowance(accountA, accountB)
   await sleep(500)
+  await erc20_balanceOf(accountA)
+  await erc20_balanceOf(accountB)
   await erc20_balanceOf(accountC)
 }
 
 async function testcase_5() {
   await erc20Detail()
   await sleep(500)
-  await erc20_burnFrom(accountB, accountA, 1)
+  await erc20_burnFrom(accountB, accountA, 10)
   await sleep(1.5 * 1000)
   await erc20_allowance(accountA, accountB)
-  await sleep(500)
+  await erc20_balanceOf(accountA)
+  await erc20_balanceOf(accountB)
+  await erc20_balanceOf(accountC)
+}
+
+async function testcase_6() {
+  await erc20_mint(accountA, 210)
+  await sleep(1.5 * 1000)
   await erc20Detail()
+
+  await sleep(500)
+  //await erc20_mint(accountC, 100) //accountB mint denied!
 }
 
 async function testcase_final() {
-  await erc20Detail()
-  await erc20_balanceOf(accountA)
-  await erc20_balanceOf(accountB)
 
-  await erc20_approve(accountA, accountB, 5)
-  await sleep(1.5 * 1000)
-  await erc20_allowance(accountA, accountB)
-
-  await erc20Detail()
-  await erc20_balanceOf(accountA)
-  await erc20_balanceOf(accountB)
-}
-
-async function testcase_mint() {
-  //await erc20_mint(accountA, 100)
-  //await erc20_mint(accountB, 100) #accountB mint denied!
 }
 
 async function main() {
+  //await erc20Detail()
   //await testcase_1()
-  //await testcase_final()
-  await erc20Detail()
+  //await testcase_2()
+  //await testcase_3()
+  //await testcase_4()
+  //await testcase_5()
+  //await testcase_6()
+  await testcase_final()
 }
 
 main().catch(err => {

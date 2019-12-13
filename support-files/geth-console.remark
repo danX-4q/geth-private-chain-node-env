@@ -21,7 +21,7 @@ eth.sendTransaction({from: account0, to: accountA, value:web3.toWei('10', 'ether
 eth.sendTransaction({from: account0, to: accountB, value:web3.toWei('10', 'ether')})
 */
 
-eth.getBalance(accountA); 
-eth.getBalance(accountB); 
+eth.getBalance(accountA)
+eth.getBalance(accountB)
 eth.getBalance(accountC)
 
