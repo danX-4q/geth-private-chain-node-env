@@ -1,0 +1,27 @@
+
+/*
+personal.newAccount("eth-env-danX")
+personal.newAccount("eth-env-danX")
+personal.newAccount("eth-env-danX")
+*/
+
+account0 = eth.accounts[0]
+accountA = "0x69c26fce9391860febc5fcfef28ea8c0c14072e1"
+accountB = "0xb05deacc0a841d20f62af734e14d24d6b175b426"
+accountC = "0x5f52694474a45838c84824f11b27a15942ad34fd"
+
+personal.unlockAccount(accountA, "eth-env-danX", 100000)
+personal.unlockAccount(accountB, "eth-env-danX", 100000)
+personal.unlockAccount(accountC, "eth-env-danX", 100000)
+
+///////////////////////////////////////
+
+/*
+eth.sendTransaction({from: account0, to: accountA, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountB, value:web3.toWei('10', 'ether')})
+*/
+
+eth.getBalance(accountA); 
+eth.getBalance(accountB); 
+eth.getBalance(accountC)
+

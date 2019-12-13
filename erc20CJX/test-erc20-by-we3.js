@@ -6,13 +6,13 @@ const fs = require("fs")
 const Web3 = require('web3');
 const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));
 
-const deployer = '0x51b2981d5c863d422cdde2fc6bd9633232754ce3'
-const accountA = deployer
-const accountB = '0xeace211d26462a2c39e9287f135f1285893027da'
-const accountC = '0x5e192b3e83ced1f83a6cccf54d5087b737161c3c'
-const cjsFileName = 'build/contracts/TutorialToken.json'
-const contractAddr = '0x86fB394dD48a1Fb9b100D82C8c323f73F6Df4562'
+accountA = "0x69c26fce9391860febc5fcfef28ea8c0c14072e1"
+accountB = "0xb05deacc0a841d20f62af734e14d24d6b175b426"
+accountC = "0x5f52694474a45838c84824f11b27a15942ad34fd"
+contractAddr = '0x562659e2624C183ea02DA147Ffc0dd9fd466545f'
 
+const deployer = accountA
+const cjsFileName = 'build/contracts/TutorialToken.json'
 var cjs = fs.readFileSync(cjsFileName)
 //console.log("after readFileSync: " + cjs.toString());
 cjs = JSON.parse(cjs)
@@ -417,12 +417,9 @@ async function testcase_mint() {
 }
 
 async function main() {
-  const argv = parseArgs(process.argv.slice(2))
-  console.log("argv", argv)
-
-  const cmd = argv._[0]
   //await testcase_1()
-  await testcase_final()
+  //await testcase_final()
+  await erc20Detail()
 }
 
 main().catch(err => {
