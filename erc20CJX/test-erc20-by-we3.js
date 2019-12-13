@@ -412,7 +412,7 @@ async function testcase_6() {
   await erc20Detail()
 
   await sleep(500)
-  //await erc20_mint(accountC, 100) //accountB mint denied!
+  //await erc20_mint(accountB, 100) //accountB mint denied!
 }
 
 async function testcase_final() {
