@@ -1,0 +1,9 @@
+eth.accounts.0
+eth.accounts[0]
+accountA = "0x69c26fce9391860febc5fcfef28ea8c0c14072e1"
+accountB = "0xb05deacc0a841d20f62af734e14d24d6b175b426"
+accountC = "0x5f52694474a45838c84824f11b27a15942ad34fd"
+eth.sendTransaction({from: account0, to: accountA, value:100})
+account0 = eth.accounts[0]
+eth.sendTransaction({from: account0, to: accountA, value:100})
+eth.sendTransaction({from: account0, to: accountB, value:100})
