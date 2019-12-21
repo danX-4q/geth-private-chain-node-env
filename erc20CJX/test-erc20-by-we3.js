@@ -6,10 +6,12 @@ const fs = require("fs")
 const Web3 = require('web3');
 const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));
 
-const accountA = "0x69c26fce9391860febc5fcfef28ea8c0c14072e1"
-const accountB = "0xb05deacc0a841d20f62af734e14d24d6b175b426"
-const accountC = "0x5f52694474a45838c84824f11b27a15942ad34fd"
-const contractAddr = '0x562659e2624C183ea02DA147Ffc0dd9fd466545f' //get it from deploy-by-web3.js
+//snapshot-1: account[A-C]
+const accountA = "0x71d20409d567c05f615dd2b4dc6ece51c4f45ed1"
+const accountB = "0x8c31484c3d5c2d377311eefbeb9be1b9e0184337"
+const accountC = "0xd7ebffe381bd81a773c0cd6f35e08f6bd191dfc8"
+//snapshot-2: erc20CJX.contractAddress
+const contractAddr = '0x1AEbb9d4248B8c39BfB0445e9c309ff19480F52B'
 
 const deployer = accountA
 const cjsFileName = 'build/contracts/TutorialToken.json'
@@ -420,14 +422,14 @@ async function testcase_final() {
 }
 
 async function main() {
-  //await erc20Detail()
+  await erc20Detail()
   //await testcase_1()
   //await testcase_2()
   //await testcase_3()
   //await testcase_4()
   //await testcase_5()
   //await testcase_6()
-  await testcase_final()
+  //await testcase_final()
 }
 
 main().catch(err => {
