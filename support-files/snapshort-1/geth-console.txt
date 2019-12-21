@@ -1,0 +1,50 @@
+
+account0 = "0xc1001915289711a92e55bf9a5a92ce43c25bccd1"
+
+accountA = "0x71d20409d567c05f615dd2b4dc6ece51c4f45ed1"
+accountB = "0x8c31484c3d5c2d377311eefbeb9be1b9e0184337"
+accountC = "0xd7ebffe381bd81a773c0cd6f35e08f6bd191dfc8"
+accountD = "0xc3cb24cc269c4fd67441c2309c7975390dccfcfd"
+accountE = "0x8877aabeca8ffda7d506b3adfe77d8cea952062e"
+accountF = "0x062a03b4ab3f52dcce1b444af09347ca6ba1fdfa"
+
+accountA1 = "0xb6bbc141ea233c77f052e8e7124573d4d0625258"
+accountB1 = "0xd3f6d984360a3a9f11a10f8f850efcc3f1ff4b5e"
+accountC1 = "0x81b5b73d88800971261649f8421b8fe00a815bb1"
+accountD1 = "0x189ad10ac9a98930ccd465902c242dab740fd89d"
+accountE1 = "0xa60d61023e74f8397d904dff8d41f21adb4a3393"
+accountF1 = "0x4e85e38669c0fb25db61c71f13ee3b453652b068"
+
+accountA2 = "0x7a7a43c0a2993a5f2b630f745b02d8bebf1e33cc"
+accountB2 = "0xfea78fea03f16bbabc6a308bc8999e5c43cbea29"
+accountC2 = "0x9bbf279ee0166561c82bb59356947129ddf1ffc3"
+accountD2 = "0x10292a6dee22c5fcc1d8772d1f8fe318928fcfb0"
+accountE2 = "0x4da1d0d350423c428f9329ff9106ec7c3d264a04"
+accountF2 = "0x27c812f7e8c2778c8baa4fe0ed62cb1b39046106"
+
+personal.unlockAccount(accountA, "eth-env-danX", 100000)
+personal.unlockAccount(accountB, "eth-env-danX", 100000)
+personal.unlockAccount(accountC, "eth-env-danX", 100000)
+personal.unlockAccount(accountD, "eth-env-danX", 100000)
+personal.unlockAccount(accountE, "eth-env-danX", 100000)
+personal.unlockAccount(accountF, "eth-env-danX", 100000)
+
+personal.unlockAccount(accountA1, "eth-env-danX", 100000)
+personal.unlockAccount(accountB1, "eth-env-danX", 100000)
+personal.unlockAccount(accountC1, "eth-env-danX", 100000)
+personal.unlockAccount(accountD1, "eth-env-danX", 100000)
+personal.unlockAccount(accountE1, "eth-env-danX", 100000)
+personal.unlockAccount(accountF1, "eth-env-danX", 100000)
+
+personal.unlockAccount(accountA2, "eth-env-danX", 100000)
+personal.unlockAccount(accountB2, "eth-env-danX", 100000)
+personal.unlockAccount(accountC2, "eth-env-danX", 100000)
+personal.unlockAccount(accountD2, "eth-env-danX", 100000)
+personal.unlockAccount(accountE2, "eth-env-danX", 100000)
+personal.unlockAccount(accountF2, "eth-env-danX", 100000)
+
+////////////////////////////////////////////////////////////
+
+eth.getBalance(accountA)
+eth.getBalance(accountB)
+eth.getBalance(accountC)

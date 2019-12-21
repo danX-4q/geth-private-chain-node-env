@@ -1,0 +1,65 @@
+
+base: none
+desc:
+* account
+    预设6x3=18(个)账户，并存入gas。
+* contract
+    无。
+
+------------------------------------------------------------
+#console command:
+
+////////////////////////////////////////
+
+account0 = eth.accounts[0]
+
+////////////////////////////////////////
+//CJX TOKEN
+
+accountA = personal.newAccount("eth-env-danX")
+accountB = personal.newAccount("eth-env-danX")
+accountC = personal.newAccount("eth-env-danX")
+accountD = personal.newAccount("eth-env-danX")
+accountE = personal.newAccount("eth-env-danX")
+accountF = personal.newAccount("eth-env-danX")
+
+eth.sendTransaction({from: account0, to: accountA, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountB, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountC, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountD, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountE, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountF, value:web3.toWei('10', 'ether')})
+
+////////////////////////////////////////
+//DANX TOKEN
+
+accountA1 = personal.newAccount("eth-env-danX")
+accountB1 = personal.newAccount("eth-env-danX")
+accountC1 = personal.newAccount("eth-env-danX")
+accountD1 = personal.newAccount("eth-env-danX")
+accountE1 = personal.newAccount("eth-env-danX")
+accountF1 = personal.newAccount("eth-env-danX")
+
+eth.sendTransaction({from: account0, to: accountA1, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountB1, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountC1, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountD1, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountE1, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountF1, value:web3.toWei('10', 'ether')})
+
+////////////////////////////////////////
+//MAST TOKEN
+
+accountA2 = personal.newAccount("eth-env-danX")
+accountB2 = personal.newAccount("eth-env-danX")
+accountC2 = personal.newAccount("eth-env-danX")
+accountD2 = personal.newAccount("eth-env-danX")
+accountE2 = personal.newAccount("eth-env-danX")
+accountF2 = personal.newAccount("eth-env-danX")
+
+eth.sendTransaction({from: account0, to: accountA2, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountB2, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountC2, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountD2, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountE2, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountF2, value:web3.toWei('10', 'ether')})
