@@ -1,0 +1,13 @@
+
+base: snapshot-1
+desc:
++ contract[erc20CJX]
+[guess] gasPrice: 1
+[guess] gas: 1812629
+transactionHash:  0x0c149eb044563698470343b83ef8938a6d1ca3e99cc35185c582cdcd1552b295
+contractAddress:  0x1AEbb9d4248B8c39BfB0445e9c309ff19480F52B
+deploy: accountA
+
+------------------------------------------------------------
+#bash command:
+cd erc20CJX && node ./deploy-by-web3.js

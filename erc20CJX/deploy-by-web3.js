@@ -6,7 +6,8 @@ const fs = require("fs")
 const Web3 = require('web3');
 const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));
 
-const deployer = '0x69c26fce9391860febc5fcfef28ea8c0c14072e1'
+//snapshot-1: accountA
+const deployer = '0x71d20409d567c05f615dd2b4dc6ece51c4f45ed1'
 const cjsFileName = 'build/contracts/TutorialToken.json'
 
 var cjs = fs.readFileSync(cjsFileName)
@@ -18,6 +19,9 @@ let bytecode = cjs.bytecode
 //console.log(bytecode)
 
 async function main() {
+
+  await web3.eth.personal.unlockAccount(deployer, "eth-env-danX", 100000)
+  .then(console.log('Account unlocked!'));
 
   var myContract = new web3.eth.Contract(abi, null, {
     data: bytecode
