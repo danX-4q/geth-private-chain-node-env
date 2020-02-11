@@ -1,0 +1,29 @@
+account0 = eth.accounts[0]
+eth.sendTransaction({from: account0, to: accountA, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountB, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountC, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountD, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountE, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountF, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountA1, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountB1, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountC1, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountD1, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountE1, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountF1, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountA2, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountB2, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountC2, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountD2, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountE2, value:web3.toWei('10', 'ether')})
+eth.sendTransaction({from: account0, to: accountF2, value:web3.toWei('10', 'ether')})
+eth.getBalance(accountA2)
+eth.sendTransaction({from: account0, to: accountF, value:web3.toWei('10', 'ether')})
+account0 = "0xc1001915289711a92e55bf9a5a92ce43c25bccd1"
+accountF = "0x062a03b4ab3f52dcce1b444af09347ca6ba1fdfa"
+eth.sendTransaction({from: account0, to: accountF, value:web3.toWei('10', 'ether')})
+accountB = "0x8c31484c3d5c2d377311eefbeb9be1b9e0184337"
+accountA = "0x71d20409d567c05f615dd2b4dc6ece51c4f45ed1"
+accountB = "0x8c31484c3d5c2d377311eefbeb9be1b9e0184337"
+eth.getTransactionReceipt("0xb340434bad383517ab83ae24f2e108fd75b4f1316b5354321ddf55027fc5e2c8")
+eth.getTransaction("0xb340434bad383517ab83ae24f2e108fd75b4f1316b5354321ddf55027fc5e2c8")
