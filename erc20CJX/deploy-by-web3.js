@@ -4,8 +4,8 @@ const parseArgs = require("minimist")
 const fs = require("fs")
 
 const Web3 = require('web3');
-//const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));
-const web3 = new Web3(new Web3.providers.WebsocketProvider('ws://127.0.0.1:8546'));
+const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));
+//const web3 = new Web3(new Web3.providers.WebsocketProvider('ws://127.0.0.1:8546'));
 
 //snapshot-1: accountA
 const deployer = '0x71d20409d567c05f615dd2b4dc6ece51c4f45ed1'
